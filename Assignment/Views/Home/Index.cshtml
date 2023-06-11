@@ -1,0 +1,38 @@
+﻿
+@Styles.Render("~/Content/css")
+<!DOCTYPE html>
+<html>
+<head>
+    <title>רשימת רופאים</title>
+</head>
+<body>
+    <div id="page">
+        <h1 id="page-title">רשימת רופאים</h1>
+        <div id="doctors-container"></div>
+        <div class="filter-buttons-container">
+            <button id="active-filter-button">רופאים פעילים</button>
+            <button id="promotion-filter-button">רופאים משלמים</button>
+        </div>
+        <div id="modal-background">
+            <div id="modal-dialog">
+                <button id="modal-exit-button">X</button>
+                <h2 id="contact-modal-title"></h2>
+                <form id="modal-form">
+                    <div class="contact-modal-input-container">
+                        <input type="text" name="name" placeholder="שם מלא" />
+                    </div>
+                    <div class="contact-modal-input-container">
+                        <input type="text" name="phone" placeholder="מספר טלפון" />
+                    </div>
+                    <div class="contact-modal-input-container">
+                        <input type="text" name="email" placeholder="מייל" />
+                    </div>
+                    <input type="submit" id="modal-submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/javascript")
+</html>

@@ -1,0 +1,182 @@
+﻿/* didn't split css due to relative short length */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#page {
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-title {
+    text-align: center;
+    padding: 20px 10px;
+    flex-shrink: 0;
+}
+
+#doctors-container {
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    flex-grow: 1;
+    box-shadow: 0 0 5px 5px lightgray;
+    border-radius: 5px;
+}
+
+.doctor-element {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    box-shadow: 0 0 5px 1px lightgray;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.doctor-element-name {
+    text-align: right;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.doctor-rank-container {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.doctor-rank-stars-full {
+    position: absolute;
+}
+
+.doctor-rank-stars-empty {
+    display: inline;
+}
+
+.doctor-element-contact {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+button,
+input[type='submit'] {
+    max-width: 12rem;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+}
+
+button.active {
+    background-color: lightgoldenrodyellow;
+}
+
+.doctor-element-contact > button:nth-child(1) {
+    margin-bottom: 5px;
+}
+
+button:hover,
+input[type='submit']:hover {
+    background-color: lightcyan;
+}
+
+.doctor-element-info {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.doctor-element-info > ul > li {
+    text-align: right;
+    list-style: none;
+}
+
+.filter-buttons-container {
+    margin: 10px auto;
+    flex-shrink: 0;
+}
+
+#modal-background {
+    z-index: 90;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+#modal-background.active {
+    display: block;
+}
+
+#modal-dialog {
+    z-index: 91;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+#modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal-form > div > input[type='text'] {
+    margin: 10px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 5px;
+}
+
+#modal-form > div > input[type='text']::placeholder {
+    text-align: right;
+    padding: 0 5px 0 0;
+}
+
+#modal-form > input[type='submit'] {
+    margin: 10px 0 0 0;
+}
+
+#modal-exit-button {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    padding: 3px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contact-modal-error {
+    color: red;
+    text-align: right;
+}
+
+#contact-modal-title {
+    text-align: center;
+}
+
